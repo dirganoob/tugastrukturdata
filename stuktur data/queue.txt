@@ -1,0 +1,231 @@
+QUEUE
+Dalam ilmu komputer, data adalah informasi dan struktur data adalah cara untuk menyimpan informasi tersebut sehingga hubungan antara nilai dan operasi apa pun yang diterapkan pada data dapat dipertahankan.
+Queue merupakan salah satu struktur data dasar yang digunakan dalam aplikasi pemrograman dan cukup penting untuk dipelajari. 
+Pengertian Queue
+Queue adalah struktur data linier yang menerapkan prinsip operasi dimana elemen data yang masuk pertama akan keluar lebih dulu. Prinsip ini dikenal dengan istilah FIFO (First In, First Out).
+ 
+Berbeda dengan struktur data stack yang menyimpan data secara bertumpuk dimana hanya terdapat satu ujung yang terbuka untuk melakukan operasi data, struktur data queue justru disusun secara horizontal dan terbuka di kedua ujungnya. Ujung pertama (head) digunakan untuk menghapus data sedangkan ujung lainnya (tail) digunakan untuk menyisipkan data.
+Persamaan antara stack dan queue adalah keduanya dapat diimplementasikan menggunakan struktur data linked list atau array.
+Contoh nyata dalam kehidupan sehari-hari yang dapat menggambarkan struktur data queue adalah barisan orang yang menunggu untuk membeli tiket di gedung bioskop.
+Orang yang baru datang akan bergabung dengan barisan dari ujung dan orang yang berdiri di depan akan menjadi yang pertama mendapatkan tiket dan meninggalkan barisan. Demikian pula dalam struktur data queue, data yang ditambahkan terlebih dahulu akan meninggalkan antrian terlebih dahulu.
+Berikut ini adalah ilustrasi dari queue
+ 
+Pada gambar di atas, karena elemen 1 ditambahkan ke antrian lebih dulu daripada 2, maka 1 adalah elemen yang pertama dihapus dari antrian. Hal ini mengikuti aturan operasi FIFO.
+Dalam istilah pemrograman, menempatkan item dalam struktur data queue disebut enqueue, sedangkan operasi menghapus item dari queue disebut dequeue.
+Kita dapat mengimplementasikan queue dalam bahasa pemrograman apa pun seperti C, C++, Java, Python atau C#, dengan spesifikasi yang hampir sama.
+Berikut adalah implementasi queue dengan bahasa pemrograman C++
+// Queue implementation in C++
+
+#include <iostream>
+#define SIZE 5
+
+using namespace std;
+
+class Queue {
+   private:
+  int items[SIZE], front, rear;
+
+   public:
+  Queue() {
+    front = -1;
+    rear = -1;
+  }
+
+  bool isFull() {
+    if (front == 0 && rear == SIZE - 1) {
+      return true;
+    }
+    return false;
+  }
+
+  bool isEmpty() {
+    if (front == -1)
+      return true;
+    else
+      return false;
+  }
+
+  void enQueue(int element) {
+    if (isFull()) {
+      cout << "Queue is full";
+    } else {
+      if (front == -1) front = 0;
+      rear++;
+      items[rear] = element;
+      cout << endl
+         << "Inserted " << element << endl;
+    }
+  }
+
+  int deQueue() {
+    int element;
+    if (isEmpty()) {
+      cout << "Queue is empty" << endl;
+      return (-1);
+    } else {
+      element = items[front];
+      if (front >= rear) {
+        front = -1;
+        rear = -1;
+      } /* Q has only one element, so we reset the queue after deleting it. */
+      else {
+        front++;
+      }
+      cout << endl
+         << "Deleted -> " << element << endl;
+      return (element);
+    }
+  }
+
+  void display() {
+    /* Function to display elements of Queue */
+    int i;
+    if (isEmpty()) {
+      cout << endl
+         << "Empty Queue" << endl;
+    } else {
+      cout << endl
+         << "Front index-> " << front;
+      cout << endl
+         << "Items -> ";
+      for (i = front; i <= rear; i++)
+        cout << items[i] << "  ";
+      cout << endl
+         << "Rear index-> " << rear << endl;
+    }
+  }
+};
+
+int main() {
+  Queue q;
+
+  //deQueue is not possible on empty queue
+  q.deQueue();
+
+  //enQueue 5 elements
+  q.enQueue(1);
+  q.enQueue(2);
+  q.enQueue(3);
+  q.enQueue(4);
+  q.enQueue(5);
+
+  // 6th element can't be added to because the queue is full
+  q.enQueue(6);
+
+  q.display();
+
+  //deQueue removes element entered first i.e. 1
+  q.deQueue();
+
+  //Now we have just 4 elements
+  q.display();
+
+  return 0;
+}
+Struktur data queue umumnya digunakan untuk mengelola thread dalam multithreading dan menerapkan sistem antrian prioritas pada program komputer.
+Jenis-jenis Queue
+Secara umum ada 4 jenis struktur data queue, meliputi
+•	Simple Queue
+•	Circular Queue
+•	Priority Queue
+•	Double-Ended Queue (Dequeue)
+1. Simple Queue
+Simple queue adalah struktur data queue paling dasar di mana penyisipan item dilakukan di simpul belakang (rear atau tail) dan penghapusan terjadi di simpul depan (front atau head).
+ 
+Sumber: naukri.com
+2. CIRCULAR QUEUE
+PADA CIRCULAR QUEUE, SIMPUL TERAKHIR TERHUBUNG KE SIMPUL PERTAMA. QUEUE JENIS INI JUGA DIKENAL SEBAGAI RING BUFFER KARENA SEMUA UJUNGNYA TERHUBUNG KE UJUNG YANG LAIN. PENYISIPAN TERJADI DI AKHIR ANTRIAN DAN PENGHAPUSAN DI DEPAN ANTRIAN.
+ 
+SUMBER: NAUKRI.COM
+3. PRIORITY QUEUE
+PRIORITY QUEUE ADALAH STRRUKTUR DATA QUEUE DIMANA SIMPUL AKAN MEMILIKI BEBERAPA PRIORITAS YANG TELAH DITENTUKAN. SIMPUL DENGAN PRIORITAS TERBESAR AKAN MENJADI YANG PERTAMA DIHAPUS DARI ANTRIAN. SEDANGKAN PENYISIPAN ITEM TERJADI SESUAI URUTAN KEDATANGANNYA. 
+ 
+SUMBER: NAUKRI.COM
+APLIKASI PRIORITY QUEUE ANTARA LAIN ALGORITMA JALUR TERPENDEK DIJKSTRA, ALGORITMA PRIM, DAN TEKNIK KOMPRESI DATA SEPERTI KODE HUFFMAN.
+4. DOUBLE-ENDED QUEUE (DEQUEUE)
+DALAM DOUBLE-ENDED QUEUE (DEQUEUE), OPERASI PENYISIPAN DAN PENGHAPUSAN DAPAT TERJADI DI UJUNG DEPAN DAN BELAKANG DARI QUEUE.
+ 
+SUMBER: NAUKRI.COM
+KARAKTERISTIK QUEUE
+QUEUE MEMILIKI BERBAGAI KARAKTERISTIK SEBAGAI BERIKUT:
+•	QUEUE ADALAH STRUKTUR FIFO (FIRST IN FIRST OUT).
+•	UNTUK MENGHAPUS ELEMEN TERAKHIR DARI QUEUE, SEMUA ELEMEN YANG DIMASUKKAN SEBELUM ELEMEN TERSEBUT HARUS DIHILANGKAN ATAU DIHAPUS.
+•	QUEUE ADALAH DAFTAR BERURUTAN DARI ELEMEN-ELEMEN DENGAN TIPE DATA YANG SERUPA.
+OPERASI-OPERASI DASAR PADA QUEUE
+QUEUE ADALAH STRUKTUR DATA ABSTRAK (ADT) YANG MEMUNGKINKAN OPERASI BERIKUT:
+•	ENQUEUE: MENAMBAHKAN ELEMEN KE AKHIR ANTRIAN
+•	DEQUEUE: MENGHAPUS ELEMEN DARI DEPAN ANTRIAN
+•	ISEMPTY: MEMERIKSA APAKAH ANTRIAN KOSONG
+•	ISFULL: MEMERIKSA APAKAH ANTRIAN SUDAH PENUH
+•	PEEK: MENDAPATKAN NILAI BAGIAN DEPAN ANTRIAN TANPA MENGHAPUSNYA
+•	INITIALIZE: MEMBUAT ANTRIAN BARU TANPA ELEMEN DATA (KOSONG)
+NAMUN, SECARA UMUM ANTRIAN MEMILIKI 2 OPERASI UTAMA, YAITU ENQUEUE DAN DEQUEUE.
+OPERASI ENQUEUE
+DI BAWAH INI ADALAH LANGKAH-LANGKAH UNTUK ENQUEUE (MEMASUKKAN) DATA KE DALAM ANTRIAN
+•	PERIKSA APAKAH ANTRIAN SUDAH PENUH ATAU TIDAK.
+•	JIKA ANTRIAN PENUH – CETAK KESALAHAN OVERFLOW DAN KELUAR DARI PROGRAM.
+•	JIKA ANTRIAN TIDAK PENUH – NAIKKAN POINTER BELAKANG UNTUK MENUNJUK KE RUANG KOSONG BERIKUTNYA.
+•	TAMBAHKAN ELEMEN PADA POSISI YANG DITUNJUK OLEH POINTER BELAKANG.
+•	KEMBALIKAN STATUS BAHWA PENAMBAHAN TELAH BERHASIL
+PSEUCODE UNTUK OPERASI ENQUEUE
+PROCEDURE ENQUEUE (DATA)
+ 
+
+IF QUEUE IS FULL
+
+RETURN OVERFLOW
+
+ENDIF
+
+REAR ← REAR + 1
+
+QUEUE[REAR] ← DATA
+
+RETURN TRUE
+
+END PROCEDURE
+OPERASI DEQUEUE
+DI BAWAH INI ADALAH LANGKAH-LANGKAH UNTUK MELAKUKAN OPERASI DEQUEUE
+•	PERIKSA APAKAH ANTRIAN SUDAH PENUH ATAU TIDAK.
+•	JIKA ANTRIAN KOSONG – CETAK KESALAHAN UNDERFLOW DAN KELUAR DARI PROGRAM.
+•	JIKA ANTRIAN TIDAK KOSONG – AKSES ELEMEN DATA YANG DITUNJUK OLEH POINTER DEPAN.
+•	GESER POINTER DEPAN UNTUK MENUNJUK KE ELEMEN DATA BERIKUTNYA YANG TERSEDIA.
+•	KEMBALIKAN STATUS BAHWA OPERASI PENGHAPUSAN TELAH BERHASIL
+PSEUCODE UNTUK OPERASI DEQUEUE
+PROCEDURE DEQUEUE
+ 
+
+IF QUEUE IS EMPTY
+
+RETURN UNDERFLOW
+
+END IF
+
+DATA = QUEUE[FRONT]
+
+FRONT ← FRONT + 1
+
+RETURN TRUE
+
+END PROCEDURE
+FUNGSI DAN KEGUNAAN QUEUE
+BERIKUT INI ADALAH BEBERAPA FUNGSI QUEUE YANG PALING UMUM DALAM STRUKTUR DATA:
+•	QUEUE BANYAK DIGUNAKAN UNTUK MENANGANI LALU LINTAS (TRAFFIC) SITUS WEB.
+•	MEMBANTU UNTUK MEMPERTAHANKAN PLAYLIST YANG ADA PADA APLIKASI MEDIA PLAYER
+•	QUEUE DIGUNAKAN DALAM SISTEM OPERASI UNTUK MENANGANI INTERUPSI.
+•	MEMBANTU DALAM MELAYANI PERMINTAAN PADA SATU SUMBER DAYA BERSAMA, SEPERTI PRINTER, PENJADWALAN TUGAS CPU, DLL.
+•	DIGUNAKAN DALAM TRANSFER DATA ASINKRONUS MISAL PIPELINE, IO FILE, DAN SOCKET.
+KELEBIHAN QUEUE
+KELEBIHAN QUEUE DI ANTARNYA:
+•	DATA DALAM JUMLAH BESAR DAPAT DIKELOLA SECARA EFISIEN.
+•	OPERASI SEPERTI PENYISIPAN DAN PENGHAPUSAN DAPAT DILAKUKAN DENGAN MUDAH KARENA MENGIKUTI ATURAN MASUK PERTAMA KELUAR PERTAMA.
+•	QUEUE BERGUNA KETIKA LAYANAN TERTENTU DIGUNAKAN OLEH BANYAK KONSUMEN.
+•	QUEUE CEPAT UNTUK KOMUNIKASI ANTAR-PROSES DATA.
+•	QUEUE DAPAT DIGUNAKAN DALAM IMPLEMENTASI STRUKTUR DATA LAINNYA.
+KEKURANGAN QUEUE
+KELEMAHAN STRUKTUR DATA QUEUE ADALAH SEBAGAI BERIKUT:
+•	OPERASI SEPERTI PENYISIPAN DAN PENGHAPUSAN ELEMEN DARI TENGAH CENDERUNG BANYAK MEMAKAN WAKTU.
+•	DALAM QUEUE KONVENSIONAL, ELEMEN BARU HANYA DAPAT DIMASUKKAN KETIKA ELEMEN YANG ADA DIHAPUS DARI ANTRIAN.
+•	MENCARI ELEMEN DATA PADA STRUKTUR QUEUE MEMBUTUHKAN TIME COMPLEXITY O(N).
+•	UKURAN MAKSIMUM ANTRIAN HARUS DITENTUKAN SEBELUMNYA.
+

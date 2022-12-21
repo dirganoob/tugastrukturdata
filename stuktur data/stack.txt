@@ -1,0 +1,109 @@
+stack
+Stack adalah salah satu komponen yang biasanya digunakan dalam pemrograman ataupun penyimpanan komputer.
+
+Bagi orang yang dekat dengan dunia IT, stack mungkin menjadi istilah yang sudah familiar. 
+
+Tak bisa dimungkiri, stack membuat penggunanya menjadi mudah dalam mengorganisasi data.
+
+Lalu, sebenarnya apa itu stack? Apa saja kelebihan dan kekurangan saat menggunakannya? Tenang saja, dalam artikel ini Glints akan menjelaskannya kepadamu.
+
+© Freepik.com
+
+Sebelum melangkah lebih jauh, mari kita bahas bersama-sama mengenai pengertian dari stack.
+
+Dilansir dari TechTerms, stack adalah salah satu struktur data yang digunakan untuk menyimpan sekumpulan objek ataupun variabel.
+
+Sesuai namanya yaitu stack, tidak heran apabila objek yang terkumpul terlihat seperti tumpukan.
+
+Nah, karakteristik stack sendiri bersifat LIFO (last in first out). Artinya, data yang terakhir masuk merupakan data yang akan keluar terlebih dahulu.
+
+Seperti halnya tumpukan pada umumnya, misalnya tumpukan buku, yang di atas atau yang terakhir masuk harus dikeluarkan terlebih dahulu untuk mendapatkan buku yang berada di tumpukan bawah.
+
+Sebagai contoh, kamu mempunyai empat buku, yaitu buku matematika, fisika, biologi, dan kimia. Buku matematika kamu masukkan terlebih dahulu, lalu buku selanjutnya fisika, biologi, dan kimia.
+
+Nah, untuk mendapatkan buku fisika, kamu harus mengeluarkan buku kimia dan biologi terlebih dahulu, karena kedua buku tersebut tergolong buku yang terakhir masuk.
+
+Analogi di atas seperti halnya stack yang memiliki sifat LIFO. Data terakhir yang masuk harus keluar terlebih dahulu.
+
+Seperti yang sudah disebutkan sebelumnya, konsep ini pada umumnya digunakan dalam pemrograman dan mengorganisir penyimpanan komputer.
+
+Baca Juga: Kamu Programmer Pemula? Ketahui 3 Jenis Bahasa dalam Pemrograman Ini!
+Kelebihan dan Kekurangan Menggunakan Stack
+
+© Freepik.com
+
+Di balik pengertiannya yang terlihat cukup menguntungkan bagi programmer, sebenarnya stack menyimpan beberapa kekurangan yang harus kamu ketahui.
+
+Berikut kelebihan dan kekurangan dari stack, dilansir dari Guru99:
+
+1. Kelebihan
+membantu mengelola data dengan metode LIFO
+secara otomatis membersihkan objek
+tidak mudah rusak
+ukuran variabel tidak dapat diubah
+mengontrol memori secara mandiri
+2. Kekurangan
+memori stack sangat terbatas
+ada kemungkinan stack akan meluap atau overflow jika terlalu banyak objek
+tidak memungkinkan akses acak, karena harus mengeluarkan tumpukan paling atas terlebih dahulu untuk mengakses tumpukan paling bawah
+Jenis-Jenis Operasi Stack
+stack adalah
+© Pexels.com
+
+Sekarang kita sudah tahu bahwa stack adalah struktur data yang menyimpan sebuah objek dan bersifat LIFO.
+
+Lalu, kira-kira apa saja operasi yang biasanya diterapkan dalam struktur data yang satu ini?
+
+1. Pop
+Dilansir dari After Academy, operasi Pop pada stack adalah operasi yang berfokus pada penghapusan elemen.
+
+Dikarenakan dalam stack programmer hanya memiliki akses pada bagian atas, hanya ada satu elemen yang dapat dihapus.
+
+2. Push
+Kebalikan dari pop, operasi Push justru lebih berfokus pada memasukkan elemen ke dalam stack atau tumpukan.
+
+Seperti halnya sistem LIFO, programmer atau pengguna hanya dapat memasukkan elemen baru di bagian atas tumpukan.
+
+3. isFull
+Operasi stack yang satu ini adalah untuk mengetahui apakah tumpukan sudah penuh atau belum.
+
+4. isEmpty
+Kebalikan dari isFull, isEmpty merupakan operasi yang digunakan untuk memeriksa apakah tumpukan kosong atau tidak.
+
+5. Peek
+Seperti namanya, dilansir dari Tutorials Point, operasi Peek atau mengintip adalah operasi yang dilakukan untuk mengetahui data teratas dari tumpukan tanpa harus menghapusnya.
+
+Baca Juga: Beberapa Text Editor Terbaik untuk Para Programmer
+Implementasi Stack
+
+© Freepik.com
+
+Sekarang kita sudah tahu pengertian dari stack serta kelebihan dan kekurangan dalam menggunakannya.
+
+Lalu, seperti apa sih implementasinya?
+
+Dilansir dari Study Tonight, stack dapat dengan mudah diimplementasikan dengan menggunakan array atau linked list.
+
+1. Array
+Mengutip After Academy, array adalah salah satu implementasi dari stack yang paling sederhana dan menawarkan akses acak ke pengguna berdasarkan indeks.
+
+Menurut Geeks for Geeks, dalam implementasi stack menggunakan array, programmer dapat menggunakan bahasa pemrograman seperti C, C++, Java, Phyton, dan C#.
+
+Geeks for Geeks juga menggambarkan bagaimana susunan dari kelima bahasa pemrograman tersebut.
+
+Kelebihan dari implementasi stack menggunakan array adalah mudah untuk diimpelementasikan.
+
+Sementara itu, kekurangannya adalah bisa dibilang tidak terlalu dinamis. Pasalnya, hal itu tidak tumbuh dan menyusut, tergantung pada kebutuhan saat proses.
+
+2. Linked list
+Sama halnya array, linked list juga mudah dalam mengimplementasikan stack.
+
+Seperti yang sudah dijelaskan sebelumnya, operasi dasar dari stack adalah menambahkan data (push) dan menghapus data (pop).
+
+Nah, dilansir dari Study Tonight, dengan menggunakan linked list, operasi push bisa diganti dengan metode addAtFront dan operasi pop bisa diganti dengan fungsi yang menghapus node depan dari linked list.
+
+Masih sama seperti array, linked list juga dapat digunakan bahasa pemrograman seperti C, C++, Java, Phyton, dan C#.
+
+Kelebihan dari implementasi stack menggunakan linked list adalah dapat bertambah dan berkurang sesuai dengan kebutuhan saat runtime.
+
+Sementara kekurangannya adalah harus membutuhkan memori ekstra karena ada pointer di dalamnya.
